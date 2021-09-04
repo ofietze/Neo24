@@ -1,20 +1,17 @@
 
-# Analog Clock
-
-### This website is deployed [here.](https://tusharnankani.github.io/AnalogClock/)
+# Neo24
 
 
 ### *Features*:
-* User-friendly
-* Displays current Time
+* Displays current Time in 24 hour format
 * Neomorphic Interface 
 * Added Themes: Dark Mode <-> Light Mode
 
 
 ## *Features to be added*
 
-- Adding Timezones 
-- Adding a stopwatch / timer (countdowns)
+- Adding markers for sunrise and sunset 
+- Adding hour labels for easier reading
 
 
 ## *Technologies used*
@@ -32,12 +29,6 @@
 * Help for Neomorphism: [Neomorphism](https://neumorphism.io/)
 * More about Neomorphism: [CSS-tricks](https://css-tricks.com/neumorphism-and-css/)
 
-## Website Demo:
-![1](https://user-images.githubusercontent.com/61280281/85862463-6e0a9a00-b7df-11ea-806e-2ebbeda2ab0c.png)
-![2](https://user-images.githubusercontent.com/61280281/85862468-6fd45d80-b7df-11ea-8142-435302297a22.png)
-![3](https://user-images.githubusercontent.com/61280281/85862470-706cf400-b7df-11ea-8e31-90f2f8ae4a2e.png)
-
-
-# *Author*
+# *Clock based on AnalogClock by*
 * Tushar Nankani (tusharnankani, tusharnankani3@gmail.com)
    - [LinkedIn](https://www.linkedin.com/in/tusharnankani)
