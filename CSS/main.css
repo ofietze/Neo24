@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap');
 
 * {
     margin: 0;
@@ -13,6 +14,7 @@ body {
     min-height: 100vh;
     background: #090909;
     background: #07141b;
+    font-family: 'Quicksand', sans-serif;
 }
 
 body.light {
@@ -182,9 +184,16 @@ body.light .thicc {
     background: #000;
 }
 
+span {
+    position: absolute;
+    margin-top: 2rem;
+    margin-left: -.1rem;
+    font-family: "Montserrat Alternates";
+}
+
 /* ticks are in 24hr format: top is twelve, 90° is 18, bottom 0, 270° is 6 o'clock */
 #tick0 {
-    transform: translateY(11.75rem);
+    transform: rotateZ(180deg) translateY(-11.75rem);
 }
 
 /* 360/24 * X  360/24 = 15 */
@@ -212,7 +221,7 @@ transform: rotateZ(60deg) translateY(-12.125rem);
 }
 
 #tick6 {
-    transform: rotateZ(90deg) translateY(11.75rem)
+    transform: rotateZ(-90deg) translateY(-11.75rem);
 }
 
 #tick7 {
@@ -237,6 +246,7 @@ transform: rotateZ(135deg) translateY(-12.125rem);
 
 #tick12 {
     transform: translateY(-11.75rem);
+    color: #eee;
 }
 #tick13 {
 transform: rotateZ(195deg) translateY(-12.125rem);
