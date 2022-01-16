@@ -1,4 +1,4 @@
-import Date from "/JS/sun.js";
+import Date from "./sun.js";
 
 const sunsetName = "sunset";
 const sunriseName = "sunrise";
