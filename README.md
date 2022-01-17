@@ -1,6 +1,8 @@
 
 # Neo24
 
+24 hour clock that highlights the amount of day light.
+Check it out [here](https://ofietze.github.io/Neo24/). Location access is needed for now.
 
 ### *Features*:
 * Displays current Time in 24 hour format
@@ -8,18 +10,11 @@
 * Added Themes: Dark Mode <-> Light Mode
 
 
-## *Features to be added*
+## *TODO*
 
-- Adding markers for sunrise and sunset 
-- Adding hour labels for easier reading
-
-
-## *Technologies used*
-
-- HTML5
-- CSS3 (with Flexbox)
-- Vanilla Javascript
-
+- Cleanup code
+- Add dark mode for whole interface
+- Update CSS to use Sass
 
 ## *References*
 * For Fonts: [Google Fonts](https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap)
