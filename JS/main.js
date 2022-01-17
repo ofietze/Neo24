@@ -65,9 +65,10 @@ function calcDaylight(){
     const percentOfDay = daylightHours / (24 * 60);
     const dayLightDegrees = Math.round(percentOfDay * 360);
     const sunriseDegrees = Math.round((((sunrise.getHours() * 60 + sunrise.getMinutes())/(24*60))*360 + 180) % 360);
-    const styles = "width: 100%;height: 100%;display: flex; justify-content: center; align-items: center;border-radius: 50%;";
-    document.getElementById("sun-bg").setAttribute("style", styles + "background-image: conic-gradient(#ffbc009c " + dayLightDegrees+ "deg, #00000000 1deg); transform:rotate("+ sunriseDegrees + "deg);");
-    document.getElementById("sun-bg").style.transition = "0.5s linear";
+    const sunBG = document.getElementById("sun-bg");
+    sunBG.style.backgroundImage = "conic-gradient(#ffc107 " + dayLightDegrees + "deg, #00000000 1deg)";
+    sunBG.style.transform = "rotate("+ (sunriseDegrees - 360) + "deg)";
+    sunBG.style.transition = "all 1s ease-in";
 }
 
 main();
