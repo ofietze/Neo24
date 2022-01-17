@@ -12,14 +12,15 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #090909;
     background: #07141b;
+    color: #eee;
     font-family: 'Quicksand', sans-serif;
     flex-direction: column-reverse;
 }
 
 body.light {
     background: #d1dae3;
+    color: #333;
 }
 
 .clock {
@@ -93,9 +94,7 @@ body.light .clock:before {
 }
 
 
-.clock .hour,
-.clock .min,
-.clock .sec {
+.clock .hour {
     position: absolute;
 }
 
@@ -124,6 +123,7 @@ body.light .clock:before {
     /* z-index least */
     border-radius: 10rem;
 }
+
 
 .toggleClass {
     position: absolute;
