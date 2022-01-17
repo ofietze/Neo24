@@ -1,0 +1,230 @@
+$light: #d1dae3;
+$dark: #161616;
+$darkBg:#0d0e3a;
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: $darkBg;
+    color: $light;
+    font-family: 'Futura', sans-serif;
+    flex-direction: column-reverse;
+    font-size: large;
+}
+
+body.light {
+    background: $light;
+    color: $dark;
+}
+
+.clock {
+    position: absolute;
+    width: 25rem;
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 40px;
+    /* box-shadow: 15px 15px 15px rgba(255, 255, 255, 0.5); */
+    box-shadow: 0em -1.2em 1.2em rgba(255, 255, 255, 0.06),
+                inset 0em -1.2em 1.2em rgba(255, 255, 255, 0.06),
+                0em 1.2em 1.2em rgba(0, 0, 0, 0.3),
+                inset 0em 1.2em 1.2em rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+}
+
+.clock-background {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 15px 15px 15px rgba(255, 255, 255, 0.5); */
+}
+
+.sun-background{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 15px 15px 15px rgba(255, 255, 255, 0.5); */
+    border-radius: 50%;
+    background: conic-gradient(rgb(255, 193, 7) 180deg, rgba(0, 0, 0, 0) 1deg);
+    transform: rotate(-90deg);
+
+}
+
+body.light .clock {
+    box-shadow: 0em -1.2em 1.2em rgba(255, 255, 255, 0.3),
+                inset 1em 1em -1em rgba(255, 255, 255, 0.3),
+                0em -1.2em -1.2em rgba(0, 0, 0, 0.5),
+                inset 1em -1em 1em rgba(0, 0, 0, 0.1);
+}
+
+.clock :hover {
+    /* yet to be completed; when hovered, diplay complete information about time, `new Date().toLocaleString();` */
+    cursor: pointer;
+}
+
+/* The small circle int the center */
+.clock:before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    /* background: rgb(255, 255, 255); */
+    border-radius: 50%;
+    background: #eeeeee;
+
+    /* The z-index property specifies the stack order of an element.
+    /* An element with greater stack order is always in front of an element with a lower stack order.  */
+    /* Note: z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky). */
+    z-index: 10000;
+    /* kept as a high value, since wanted at top */
+}
+
+body.light .clock:before {
+    background: #1a74be;
+}
+
+.clock .hour {
+    position: absolute;
+}
+
+/* length of respective arms; */
+.clock .hour, .hr {
+    width: 22rem;
+    height: 22rem;
+} 
+
+.hr {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    position: absolute;
+    border-radius: 50%;
+    transition: transform 1s ease-out;
+}
+
+.hr:before {
+    content: '';
+    position: absolute;
+    width: .35rem;
+    height: 15rem;
+    background-image: linear-gradient(rgb(8, 50, 238), $light);
+    z-index: 10;
+    /* z-index least */
+    border-radius: 10rem;
+}
+
+body.light .clock .hr:before {
+    content: '';
+    position: absolute;
+    width: .35rem;
+    height: 15rem;
+    background-image: linear-gradient(rgb(34, 69, 226), $dark);
+    z-index: 10;
+    /* z-index least */
+    border-radius: 10rem;
+}
+
+.toggleClass {
+    position: absolute;
+    top: 35px;
+    right: 150px;
+    width: 20px;
+    margin: 2px;
+    height: 20px;
+    font-size: 18px;
+    border-radius: 50%;
+    background: #d1dae3;
+    color: #d1dae3;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.toggleClass:before {
+    position: absolute;
+    content: 'Light Mode';
+    white-space: nowrap;
+    left: 25px;
+}
+
+body.light .toggleClass {
+    background: #091921;
+    color: #091921;
+    content: 'Dark Mode';
+}
+
+
+body.light .toggleClass:before {
+    content: 'Dark Mode';
+    white-space: nowrap;
+}
+
+.ticks {
+    position: absolute;
+    background: rgb(156 156 156);
+    border-radius: 10%;
+    z-index: 0;
+    width: .25rem;
+    height: .75rem;
+    /* center all ticks at first */
+}
+
+body.light .ticks {
+    background: #555;
+}
+
+.thicc {
+    width: .75rem;
+    height: .75rem;
+    background: #eee;
+    font-size: xx-large;
+}
+
+body.light .thicc {
+    background: #000;
+}
+
+span {
+    position: absolute;
+    margin-top: 1.5rem;
+    margin-left: -.75rem;
+}
+
+span.oneDigit{
+    margin-left: -.2rem;
+}
+
+span.text{
+    margin-left: -5%;
+}
+
+.images{
+    position: absolute;
+    bottom: 3%;
+    margin: 0 auto;
+}
+
+img {
+    width: 15%;
+    margin: 0 10%;
+
+}
+
+/* ticks are in 24hr format: top is twelve, 90° is 18, bottom 0, 270° is 6 o'clock */
+@for $i from 0 through 23 {
+    #tick#{$i} {
+        transform: rotate(#{$i * 15 + 180}deg) translateY(-12.125rem);  
+    }
+}
+
+footer {
+    position:absolute; 
+    bottom:0;
+}

@@ -1,314 +1,309 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+@charset "UTF-8";
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #07141b;
-    color: #eee;
-    font-family: 'Quicksand', sans-serif;
-    flex-direction: column-reverse;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #0d0e3a;
+  color: #d1dae3;
+  font-family: "Futura", sans-serif;
+  flex-direction: column-reverse;
+  font-size: large;
 }
 
 body.light {
-    background: #d1dae3;
-    color: #333;
+  background: #d1dae3;
+  color: #161616;
 }
 
 .clock {
-    position: absolute;
-    width: 25rem;
-    height: 25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 40px;
-    /* box-shadow: 15px 15px 15px rgba(255, 255, 255, 0.5); */
-    box-shadow: 0em -1.2em 1.2em rgba(255, 255, 255, 0.06),
-                inset 0em -1.2em 1.2em rgba(255, 255, 255, 0.06),
-                0em 1.2em 1.2em rgba(0, 0, 0, 0.3),
-                inset 0em 1.2em 1.2em rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
+  position: absolute;
+  width: 25rem;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 40px;
+  /* box-shadow: 15px 15px 15px rgba(255, 255, 255, 0.5); */
+  box-shadow: 0em -1.2em 1.2em rgba(255, 255, 255, 0.06), inset 0em -1.2em 1.2em rgba(255, 255, 255, 0.06), 0em 1.2em 1.2em rgba(0, 0, 0, 0.3), inset 0em 1.2em 1.2em rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
 }
 
 .clock-background {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* box-shadow: 15px 15px 15px rgba(255, 255, 255, 0.5); */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 15px 15px 15px rgba(255, 255, 255, 0.5); */
 }
 
-.sun-background{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* box-shadow: 15px 15px 15px rgba(255, 255, 255, 0.5); */
-    border-radius: 50%;
-
+.sun-background {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 15px 15px 15px rgba(255, 255, 255, 0.5); */
+  border-radius: 50%;
+  background: conic-gradient(#ffc107 180deg, rgba(0, 0, 0, 0) 1deg);
+  transform: rotate(-90deg);
 }
 
 body.light .clock {
-    box-shadow: 0em -1.2em 1.2em rgba(255, 255, 255, 0.3),
-                inset 1em 1em -1em rgba(255, 255, 255, 0.3),
-                0em -1.2em -1.2em rgba(0, 0, 0, 0.5),
-                inset 1em -1em 1em rgba(0, 0, 0, 0.1);
+  box-shadow: 0em -1.2em 1.2em rgba(255, 255, 255, 0.3), inset 1em 1em -1em rgba(255, 255, 255, 0.3), 0em -1.2em -1.2em rgba(0, 0, 0, 0.5), inset 1em -1em 1em rgba(0, 0, 0, 0.1);
 }
 
 .clock :hover {
-    /* yet to be completed; when hovered, diplay complete information about time, `new Date().toLocaleString();` */
-    cursor: pointer;
-
+  /* yet to be completed; when hovered, diplay complete information about time, `new Date().toLocaleString();` */
+  cursor: pointer;
 }
 
 /* The small circle int the center */
 .clock:before {
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    /* background: rgb(255, 255, 255); */
-    border-radius: 50%;
-    background: #eeeeee;
-
-    /* The z-index property specifies the stack order of an element.
-    /* An element with greater stack order is always in front of an element with a lower stack order.  */
-    /* Note: z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky). */
-    z-index: 10000;
-    /* kept as a high value, since wanted at top */
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  /* background: rgb(255, 255, 255); */
+  border-radius: 50%;
+  background: #eeeeee;
+  /* The z-index property specifies the stack order of an element.
+  /* An element with greater stack order is always in front of an element with a lower stack order.  */
+  /* Note: z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky). */
+  z-index: 10000;
+  /* kept as a high value, since wanted at top */
 }
 
 body.light .clock:before {
-    background: #1a74be;
+  background: #1a74be;
 }
 
-
 .clock .hour {
-    position: absolute;
+  position: absolute;
 }
 
 /* length of respective arms; */
 .clock .hour, .hr {
-    width: 22rem;
-    height: 22rem;
-} 
+  width: 22rem;
+  height: 22rem;
+}
 
 .hr {
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    position: absolute;
-    border-radius: 50%;
-    
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  position: absolute;
+  border-radius: 50%;
+  transition: transform 1s ease-out;
 }
 
 .hr:before {
-    content: '';
-    position: absolute;
-    width: .25rem;
-    height: 15rem;
-    background-image: linear-gradient(rgb(8, 50, 238), #000);
-    z-index: 10;
-    /* z-index least */
-    border-radius: 10rem;
+  content: "";
+  position: absolute;
+  width: 0.35rem;
+  height: 15rem;
+  background-image: linear-gradient(#0832ee, #d1dae3);
+  z-index: 10;
+  /* z-index least */
+  border-radius: 10rem;
 }
 
+body.light .clock .hr:before {
+  content: "";
+  position: absolute;
+  width: 0.35rem;
+  height: 15rem;
+  background-image: linear-gradient(#2245e2, #161616);
+  z-index: 10;
+  /* z-index least */
+  border-radius: 10rem;
+}
 
 .toggleClass {
-    position: absolute;
-    top: 35px;
-    right: 150px;
-    width: 20px;
-    margin: 2px;
-    height: 20px;
-    font-size: 18px;
-    border-radius: 50%;
-    background: #d1dae3;
-    color: #d1dae3;
-    font-family: 'Quicksand', sans-serif;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+  position: absolute;
+  top: 35px;
+  right: 150px;
+  width: 20px;
+  margin: 2px;
+  height: 20px;
+  font-size: 18px;
+  border-radius: 50%;
+  background: #d1dae3;
+  color: #d1dae3;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
-
 .toggleClass:before {
-    position: absolute;
-    content: 'Light Mode';
-    white-space: nowrap;
-    left: 25px;
+  position: absolute;
+  content: "Light Mode";
+  white-space: nowrap;
+  left: 25px;
 }
 
 body.light .toggleClass {
-    background: #091921;
-    color: #091921;
-    content: 'Dark Mode';
+  background: #091921;
+  color: #091921;
+  content: "Dark Mode";
 }
 
-
 body.light .toggleClass:before {
-    content: 'Dark Mode';
-    white-space: nowrap;
+  content: "Dark Mode";
+  white-space: nowrap;
 }
 
 .ticks {
-    content: '';
-    position: absolute;
-    background: rgb(156 156 156);
-    border-radius: 10%;
-    z-index: 0;
-    width: .25rem;
-    height: .75rem;
-    /* center all ticks at first */
+  position: absolute;
+  background: #9c9c9c;
+  border-radius: 10%;
+  z-index: 0;
+  width: 0.25rem;
+  height: 0.75rem;
+  /* center all ticks at first */
 }
 
 body.light .ticks {
-    background: #555;
+  background: #555;
 }
 
 .thicc {
-    width: .5rem;
-    height: 1.5rem;
-    background: #eee;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: #eee;
+  font-size: xx-large;
 }
 
 body.light .thicc {
-    background: #000;
+  background: #000;
 }
 
 span {
-    position: absolute;
-    margin-top: 2rem;
-    margin-left: -.1rem;
-    font-family: "Montserrat Alternates";
+  position: absolute;
+  margin-top: 1.5rem;
+  margin-left: -0.75rem;
 }
 
-span.text{
-    margin-left: -5%;
+span.oneDigit {
+  margin-left: -0.2rem;
 }
 
-.images{
-    position: absolute;
-    bottom: 3%;
-    margin: 0 auto;
+span.text {
+  margin-left: -5%;
+}
+
+.images {
+  position: absolute;
+  bottom: 3%;
+  margin: 0 auto;
 }
 
 img {
-    width: 15%;
-    margin: 0 10%;
-
+  width: 15%;
+  margin: 0 10%;
 }
 
 /* ticks are in 24hr format: top is twelve, 90° is 18, bottom 0, 270° is 6 o'clock */
 #tick0 {
-    transform: rotateZ(180deg) translateY(-11.75rem);
+  transform: rotate(180deg) translateY(-12.125rem);
 }
 
-/* 360/24 * X  360/24 = 15 */
 #tick1 {
-   transform: rotateZ(15deg) translateY(-12.125rem);
+  transform: rotate(195deg) translateY(-12.125rem);
 }
- 
+
 #tick2 {
-transform: rotateZ(30deg) translateY(-12.125rem);
+  transform: rotate(210deg) translateY(-12.125rem);
 }
 
 #tick3 {
-transform: rotateZ(45deg) translateY(-12.125rem);
+  transform: rotate(225deg) translateY(-12.125rem);
 }
 
 #tick4 {
-transform: rotateZ(60deg) translateY(-12.125rem);
+  transform: rotate(240deg) translateY(-12.125rem);
 }
 
 #tick5 {
-    transform: rotateZ(75deg) translateY(-12.125rem);
+  transform: rotate(255deg) translateY(-12.125rem);
 }
 
 #tick6 {
-    transform: rotateZ(-90deg) translateY(-11.75rem);
+  transform: rotate(270deg) translateY(-12.125rem);
 }
 
 #tick7 {
-transform: rotateZ(105deg) translateY(-12.125rem);
+  transform: rotate(285deg) translateY(-12.125rem);
 }
 
 #tick8 {
-transform: rotateZ(120deg) translateY(-12.125rem);
+  transform: rotate(300deg) translateY(-12.125rem);
 }
 
 #tick9 {
-transform: rotateZ(135deg) translateY(-12.125rem);
+  transform: rotate(315deg) translateY(-12.125rem);
 }
 
 #tick10 {
-    transform: rotateZ(150deg) translateY(-12.125rem);
+  transform: rotate(330deg) translateY(-12.125rem);
 }
 
 #tick11 {
-    transform: rotateZ(165deg) translateY(-12.125rem);
+  transform: rotate(345deg) translateY(-12.125rem);
 }
 
 #tick12 {
-    transform: translateY(-11.75rem);
-    color: #eee;
+  transform: rotate(360deg) translateY(-12.125rem);
 }
+
 #tick13 {
-transform: rotateZ(195deg) translateY(-12.125rem);
+  transform: rotate(375deg) translateY(-12.125rem);
 }
 
 #tick14 {
-transform: rotateZ(210deg) translateY(-12.125rem);
+  transform: rotate(390deg) translateY(-12.125rem);
 }
 
 #tick15 {
-transform: rotateZ(225deg) translateY(-12.125rem);
+  transform: rotate(405deg) translateY(-12.125rem);
 }
 
 #tick16 {
-    transform: rotateZ(240deg) translateY(-12.125rem);
+  transform: rotate(420deg) translateY(-12.125rem);
 }
 
 #tick17 {
-    transform: rotateZ(255deg) translateY(-12.125rem);
+  transform: rotate(435deg) translateY(-12.125rem);
 }
 
 #tick18 {
-    transform: rotateZ(90deg) translateY(-11.75rem);
+  transform: rotate(450deg) translateY(-12.125rem);
 }
 
 #tick19 {
-transform: rotateZ(285deg) translateY(-12.125rem);
+  transform: rotate(465deg) translateY(-12.125rem);
 }
 
 #tick20 {
-transform: rotateZ(300deg) translateY(-12.125rem);
+  transform: rotate(480deg) translateY(-12.125rem);
 }
 
 #tick21 {
-transform: rotateZ(315deg) translateY(-12.125rem);
+  transform: rotate(495deg) translateY(-12.125rem);
 }
 
 #tick22 {
-    transform: rotateZ(330deg) translateY(-12.125rem);
+  transform: rotate(510deg) translateY(-12.125rem);
 }
 
 #tick23 {
-    transform: rotateZ(345deg) translateY(-12.125rem);
+  transform: rotate(525deg) translateY(-12.125rem);
 }
 
 footer {
-    position:absolute; 
-    bottom:0;
+  position: absolute;
+  bottom: 0;
 }
+
+/*# sourceMappingURL=main.css.map */
