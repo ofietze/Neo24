@@ -69,7 +69,7 @@ body.light .clock {
   border-radius: 50%;
   background: #eeeeee;
   /* The z-index property specifies the stack order of an element.
-  /* An element with greater stack order is always in front of an element with a lower stack order.  */
+    /* An element with greater stack order is always in front of an element with a lower stack order.  */
   /* Note: z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky). */
   z-index: 10000;
   /* kept as a high value, since wanted at top */
@@ -84,7 +84,8 @@ body.light .clock:before {
 }
 
 /* length of respective arms; */
-.clock .hour, .hr {
+.clock .hour,
+.hr {
   width: 22rem;
   height: 22rem;
 }
@@ -202,6 +203,11 @@ span.text {
 img {
   width: 15%;
   margin: 0 10%;
+}
+
+#picker {
+  margin-top: 12%;
+  z-index: 1;
 }
 
 /* ticks are in 24hr format: top is twelve, 90° is 18, bottom 0, 270° is 6 o'clock */
