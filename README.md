@@ -8,13 +8,15 @@ Check it out [here](https://ofietze.github.io/Neo24/). Location access is needed
 * Displays current Time in 24 hour format
 * Neomorphic Interface 
 * Added Themes: Dark Mode <-> Light Mode
+* Using Sass
 
 
 ## *TODO*
 
 - Cleanup code
-- Add dark mode for whole interface
-- Update CSS to use Sass
+- Rework dark mode for whole interface
+- Add selection of example locations
+- Make clock responsive
 
 ## *References*
 * For Fonts: [Google Fonts](https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap)
