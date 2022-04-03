@@ -1,61 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Description" content="A Simple Analog Clock">
-    <link rel="stylesheet" href="CSS/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="A Simple Analog Clock" />
+    <link rel="stylesheet" href="CSS/main.css" />
     <title>Analog Clock</title>
-</head>
+  </head>
 
-<body class="light">
-    <div class="clock">   
-        <div class="clock-background">
-            <div class="sun-background" id="sun-bg"></div>
-            <div class="ticks thicc" id="tick0"><span class="oneDigit">0</span></div>
-            <div class="ticks" id="tick1"></div>
-            <div class="ticks" id="tick2"></div>
-            <div class="ticks" id="tick3"><span class="oneDigit">3</span></div>
-            <div class="ticks" id="tick4"></div>
-            <div class="ticks" id="tick5"></div>
-            <div class="ticks thicc" id="tick6"><span class="oneDigit">6</span></div>
-            <div class="ticks" id="tick7"></div>
-            <div class="ticks" id="tick8"></div>
-            <div class="ticks" id="tick9"><span class="oneDigit">9</span></div>
-            <div class="ticks" id="tick10"></div>
-            <div class="ticks" id="tick11"></div>
-            <div class="ticks thicc" id="tick12"><span>12</span></div>
-            <div class="ticks" id="tick13"></div>
-            <div class="ticks" id="tick14"></div>
-            <div class="ticks" id="tick15"><span>15</span></div>
-            <div class="ticks" id="tick16"></div>
-            <div class="ticks" id="tick17"></div>
-            <div class="ticks thicc" id="tick18"><span>18</span></div>
-            <div class="ticks" id="tick19"></div>
-            <div class="ticks" id="tick20"></div>
-            <div class="ticks" id="tick21"><span>21</span></div>
-            <div class="ticks" id="tick22"></div>
-            <div class="ticks" id="tick23"></div>
-            
+  <body class="light">
+    <div class="clock">
+      <div class="clock-background">
+        <div class="sun-background" id="sun-bg"></div>
+        <div class="ticks thicc" id="tick0">
+          <span class="oneDigit">0</span>
         </div>
+        <div class="ticks" id="tick1"></div>
+        <div class="ticks" id="tick2"></div>
+        <div class="ticks" id="tick3"><span class="oneDigit">3</span></div>
+        <div class="ticks" id="tick4"></div>
+        <div class="ticks" id="tick5"></div>
+        <div class="ticks thicc" id="tick6">
+          <span class="oneDigit">6</span>
+        </div>
+        <div class="ticks" id="tick7"></div>
+        <div class="ticks" id="tick8"></div>
+        <div class="ticks" id="tick9"><span class="oneDigit">9</span></div>
+        <div class="ticks" id="tick10"></div>
+        <div class="ticks" id="tick11"></div>
+        <div class="ticks thicc" id="tick12"><span>12</span></div>
+        <div class="ticks" id="tick13"></div>
+        <div class="ticks" id="tick14"></div>
+        <div class="ticks" id="tick15"><span>15</span></div>
+        <div class="ticks" id="tick16"></div>
+        <div class="ticks" id="tick17"></div>
+        <div class="ticks thicc" id="tick18"><span>18</span></div>
+        <div class="ticks" id="tick19"></div>
+        <div class="ticks" id="tick20"></div>
+        <div class="ticks" id="tick21"><span>21</span></div>
+        <div class="ticks" id="tick22"></div>
+        <div class="ticks" id="tick23"></div>
+      </div>
 
-        <div class="hour">
-            <div class="hr" id="hr"></div>
-        </div>
+      <div class="hour">
+        <div class="hr" id="hr"></div>
+      </div>
+    </div>
+    <div id="picker">
+      <label for="locationPicker">Pick a location</label>
+      <select name="locationPicker" id="locationPicker">
+        <option value="Current">Current Location</option>
+        <option value="Cologne" selected>Cologne</option>
+        <option value="Lisbon">Lisbon</option>
+        <option value="Seoul">Seoul</option>
+        <option value="SaoPaulo">Sao Paulo</option>
+      </select>
     </div>
     <div class="images">
-        <img src="sunrise.png">
-        <span class="text" id="sunrise"></span>
-        <img src="sunset.png">
-        <span class="text" id="sunset"></span>
+      <img src="sunrise.png" />
+      <span class="text" id="sunrise"></span>
+      <img src="sunset.png" />
+      <span class="text" id="sunset"></span>
+      <br />
+      <span id="sunhours"></span>
     </div>
-  
+
     <script src="JS/main.js" type="module"></script>
     <script src="JS/sun.js" type="module"></script>
-    <div id ="toggleClass" class="toggleClass"></div>
-
-</body>
-<footer>
-    <div>Icons made by <a href="https://www.flaticon.com/authors/mehwish" title="Mehwish">Mehwish</a></div>
-</footer>
+    <div id="toggleClass" class="toggleClass"></div>
+  </body>
+  <footer>
+    <div>
+      Icons made by
+      <a href="https://www.flaticon.com/authors/mehwish" title="Mehwish"
+        >Mehwish</a
+      >
+    </div>
+  </footer>
 </html>
