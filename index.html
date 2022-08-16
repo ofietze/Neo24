@@ -9,6 +9,18 @@
   </head>
 
   <body class="light">
+    <div class="info">
+      <div id="picker">
+        <label for="locationPicker">Pick a location</label>
+        <select name="locationPicker" id="locationPicker">
+          <option value="Current">Current Location</option>
+          <option value="Cologne" selected>Cologne</option>
+          <option value="Lisbon">Lisbon</option>
+          <option value="Seoul">Seoul</option>
+          <option value="SaoPaulo">Sao Paulo</option>
+        </select>
+      </div>
+    </div>
     <div class="clock">
       <div class="clock-background">
         <div class="sun-background" id="sun-bg"></div>
@@ -46,23 +58,15 @@
         <div class="hr" id="hr"></div>
       </div>
     </div>
-    <div id="picker">
-      <label for="locationPicker">Pick a location</label>
-      <select name="locationPicker" id="locationPicker">
-        <option value="Current">Current Location</option>
-        <option value="Cologne" selected>Cologne</option>
-        <option value="Lisbon">Lisbon</option>
-        <option value="Seoul">Seoul</option>
-        <option value="SaoPaulo">Sao Paulo</option>
-      </select>
-    </div>
+
     <div class="images">
-      <img src="sunrise.png" />
-      <span class="text" id="sunrise"></span>
-      <img src="sunset.png" />
-      <span class="text" id="sunset"></span>
-      <br />
-      <span id="sunhours"></span>
+      <div class="icons">
+        <img src="sunrise.png" />
+        <div class="text" id="sunrise"></div>
+        <img src="sunset.png" />
+        <div class="text" id="sunset"></div>
+      </div>
+      <p id="sunhours"></p>
     </div>
 
     <script src="JS/main.js" type="module"></script>
