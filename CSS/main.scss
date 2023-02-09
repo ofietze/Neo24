@@ -60,11 +60,6 @@ body.light .clock {
     0em -1.2em -1.2em rgba(0, 0, 0, 0.5), inset 1em -1em 1em rgba(0, 0, 0, 0.1);
 }
 
-.clock :hover {
-  /* yet to be completed; when hovered, diplay complete information about time, `new Date().toLocaleString();` */
-  cursor: pointer;
-}
-
 /* The small circle int the center */
 .clock:before {
   content: "";
@@ -142,24 +137,6 @@ body.light .clock .hr:before {
   cursor: pointer;
   display: flex;
   align-items: center;
-}
-
-.toggleClass:before {
-  position: absolute;
-  content: "Light Mode";
-  white-space: nowrap;
-  left: 25px;
-}
-
-body.light .toggleClass {
-  background: #091921;
-  color: #091921;
-  content: "Dark Mode";
-}
-
-body.light .toggleClass:before {
-  content: "Dark Mode";
-  white-space: nowrap;
 }
 
 .ticks {

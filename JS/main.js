@@ -15,25 +15,21 @@ var options = {
 };
 
 class Location {
-  constructor(name, location) {
+  constructor(name, location, timezone) {
     this.name = name;
     this.location = location;
+    this.timezone = timezone;
   }
 }
 
 const locations = [
   new Location("Current", {}),
   new Location("Cologne", { latitude: 50.9076, longitude: 6.9729 }),
+  new Location("Amsterdam", { latitude: 52.395, longitude: 4.846 }),
   new Location("Lisbon", { latitude: 40.0133, longitude: -8.608 }),
   new Location("Seoul", { latitude: 37.5652, longitude: 126.8494 }),
   new Location("SaoPaulo", { latitude: -23.6815, longitude: -46.8754 }),
 ];
-
-function onToggleClass() {
-  const body = document.querySelector("body");
-  body.classList.toggle("light");
-  body.style.transition = `0.3s linear`;
-}
 
 function onLocationChange() {
   const location = document.getElementById("locationPicker").value;
@@ -57,14 +53,9 @@ setInterval(() => {
 
   let msec = day.getMilliseconds();
 
-  // VERY IMPORTANT STEP:
-
   hr.style.transform = `rotateZ(${
     (360 / (24 * 60 * 60)) * (sec + 12 * 60 * 60)
   }deg)`;
-
-  // gives the smooth transitioning effect, but there's a bug here!
-  // sc.style.transition = `1s`;
 }, 100);
 
 function dateToHours(date) {
@@ -76,10 +67,6 @@ function dateToHours(date) {
 }
 
 function main() {
-  document
-    .getElementById("toggleClass")
-    .addEventListener("click", onToggleClass, false);
-
   document
     .getElementById("locationPicker")
     .addEventListener("change", onLocationChange, false);
@@ -110,6 +97,7 @@ function calcDaylight() {
   );
   const percentOfDay = daylightMinutes / (24 * 60);
   const dayLightDegrees = Math.round(percentOfDay * 360);
+
   const sunriseDegrees = Math.round(
     (((sunrise.getHours() * 60 + sunrise.getMinutes()) / (24 * 60)) * 360 +
       180) %

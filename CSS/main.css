@@ -45,17 +45,12 @@ body.light {
   align-items: center;
   /* box-shadow: 15px 15px 15px rgba(255, 255, 255, 0.5); */
   border-radius: 50%;
-  background: conic-gradient(#ffc107 180deg, rgba(0, 0, 0, 0) 1deg);
+  background: conic-gradient(rgb(255, 193, 7) 180deg, rgba(0, 0, 0, 0) 1deg);
   transform: rotate(-90deg);
 }
 
 body.light .clock {
   box-shadow: 0em -1.2em 1.2em rgba(255, 255, 255, 0.3), inset 1em 1em -1em rgba(255, 255, 255, 0.3), 0em -1.2em -1.2em rgba(0, 0, 0, 0.5), inset 1em -1em 1em rgba(0, 0, 0, 0.1);
-}
-
-.clock :hover {
-  /* yet to be completed; when hovered, diplay complete information about time, `new Date().toLocaleString();` */
-  cursor: pointer;
 }
 
 /* The small circle int the center */
@@ -103,7 +98,7 @@ body.light .clock:before {
   position: absolute;
   width: 0.35rem;
   height: 15rem;
-  background-image: linear-gradient(#0832ee, #e0e0e0);
+  background-image: linear-gradient(rgb(8, 50, 238), #e0e0e0);
   z-index: 10;
   /* z-index least */
   border-radius: 10rem;
@@ -114,7 +109,7 @@ body.light .clock .hr:before {
   position: absolute;
   width: 0.35rem;
   height: 15rem;
-  background-image: linear-gradient(#2245e2, #161616);
+  background-image: linear-gradient(rgb(34, 69, 226), #161616);
   z-index: 10;
   /* z-index least */
   border-radius: 10rem;
@@ -136,27 +131,9 @@ body.light .clock .hr:before {
   align-items: center;
 }
 
-.toggleClass:before {
-  position: absolute;
-  content: "Light Mode";
-  white-space: nowrap;
-  left: 25px;
-}
-
-body.light .toggleClass {
-  background: #091921;
-  color: #091921;
-  content: "Dark Mode";
-}
-
-body.light .toggleClass:before {
-  content: "Dark Mode";
-  white-space: nowrap;
-}
-
 .ticks {
   position: absolute;
-  background: #9c9c9c;
+  background: rgb(156, 156, 156);
   border-radius: 10%;
   z-index: 0;
   width: 0.25rem;
