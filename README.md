@@ -12,9 +12,9 @@ Check it out [here](https://ofietze.github.io/Neo24/).
 
 ## _TODO_
 
-- Cleanup code
-- Rework dark mode for whole interface
 - Make clock responsive
+- Add coordinate input
+- Add automatic timezone adjustment
 
 ## _References_
 
