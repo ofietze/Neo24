@@ -9,6 +9,11 @@
   </head>
 
   <body class="light">
+    <header class="header">
+      <h1 class="title">Neo24</h1>
+      <p class="subtitle">24-hour daylight clock</p>
+    </header>
+
     <div class="info">
       <div id="picker">
         <label for="locationPicker">Pick a location</label>
@@ -60,14 +65,18 @@
       </div>
     </div>
 
-    <div class="images">
-      <div class="icons">
-        <img src="sunrise.png" />
-        <div class="text" id="sunrise"></div>
-        <img src="sunset.png" />
-        <div class="text" id="sunset"></div>
+    <div class="daylight-info">
+      <div class="sun-times">
+        <div class="sun-time">
+          <img src="sunrise.png" alt="Sunrise" />
+          <div class="time-display" id="sunrise"></div>
+        </div>
+        <div class="sun-time">
+          <img src="sunset.png" alt="Sunset" />
+          <div class="time-display" id="sunset"></div>
+        </div>
       </div>
-      <p id="sunhours"></p>
+      <div class="daylight-duration" id="sunhours"></div>
     </div>
 
     <script src="JS/main.js" type="module"></script>
